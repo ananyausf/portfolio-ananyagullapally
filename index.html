@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ananya Gullapally</title>
+  <meta name="description" content="Portfolio of data & AI projects by Ananya Gullapally." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1222; --text:#e8ebff; --muted:#b8bce0; --accent:#7aa2ff; --card:#141735; --border:rgba(255,255,255,0.08);
+    }
+    :root.light{
+      --bg:#ffffff; --text:#171821; --muted:#4b4f66; --accent:#1f5eff; --card:#f4f6ff; --border:rgba(0,0,0,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.6; letter-spacing:0.2px;
+      transition:background 300ms, color 300ms;
+    }
+    .container{width:min(1100px,92%); margin-inline:auto}
+    .site-header{display:flex; align-items:center; justify-content:space-between; padding:18px 0; position:sticky; top:0; backdrop-filter:blur(6px)}
+    .logo{font-weight:800; letter-spacing:0.3px; text-decoration:none; color:var(--text)}
+    .logo span{color:var(--accent)}
+    .nav{display:flex; gap:16px; align-items:center}
+    .nav a{color:var(--muted); text-decoration:none; font-weight:600}
+    .nav a:hover{color:var(--text)}
+    .nav button{background:transparent; border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:10px; cursor:pointer}
+
+    .hero{padding:72px 0 28px}
+    .hero h1{font-size:clamp(28px,6vw,56px); margin:0 0 10px; font-weight:800}
+    .accent{background:linear-gradient(45deg,var(--accent),#a07bff); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .lead{max-width:780px; color:var(--muted); font-size:1.1rem}
+
+    .section{padding:36px 0}
+    .section h2{font-size:28px; margin-bottom:10px}
+    .bullets{margin:10px 0 0 0; padding-left:18px}
+
+    .grid{display:grid; gap:16px}
+    @media (min-width:780px){ .grid-2{grid-template-columns:1fr 1fr} }
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:0 6px 24px rgba(0,0,0,0.15)}
+    .card-header{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .card h3{margin:0}
+    .btn{display:inline-block; border:1px solid var(--border); padding:8px 14px; border-radius:12px; text-decoration:none; color:var(--text); transition:transform 180ms ease, box-shadow 180ms ease}
+    .btn.primary{background:linear-gradient(45deg,var(--accent),#a07bff); border:none}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,0.18)}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; padding:0; list-style:none; margin:10px 0 0}
+    .tags li{border:1px solid var(--border); padding:4px 10px; border-radius:999px; font-size:12px; color:var(--muted)}
+
+    .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px}
+    .skill{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:14px}
+
+    .contact-list{list-style:none; padding:0; display:grid; gap:6px}
+    .contact-list a{color:var(--accent); text-decoration:none}
+
+    .reveal{opacity:0; transform:translateY(10px); animation:revealUp 700ms ease forwards}
+    .reveal:nth-child(1){animation-delay:0ms}
+    .reveal:nth-child(2){animation-delay:120ms}
+    .reveal:nth-child(3){animation-delay:240ms}
+    @keyframes revealUp{to{opacity:1; transform:translateY(0)}}
+
+    .site-footer{padding:40px 0; color:var(--muted); font-size:0.95rem; border-top:1px solid var(--border)}
+    code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+    .thumb{width:100%; border-radius:12px; border:1px solid var(--border); margin-top:10px}
+  </style>
+</head>
+<body>
+  <header class="site-header container">
+    <a href="#top" class="logo">Ananya<span>Portfolio</span></a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <h1 class="reveal">Hi, I’m <span class="accent">Ananya Gullapally</span>.</h1>
+      <p class="lead reveal">
+        MS student focusing on data & AI. I build practical ML workflows and clear, business-oriented analyses.
+        This portfolio is built with HTML/CSS and hosted on GitHub Pages.
+      </p>
+      <a class="btn primary reveal" href="#projects">See my work</a>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About Me</h2>
+      <p>
+        I specialize in turning data into decisions. My projects emphasize model evaluation (recall/PR),
+        reproducible notebooks, and concise storytelling for non-technical audiences.
+      </p>
+      <ul class="bullets">
+        <li>Interests: data & AI, model tuning, visualization</li>
+        <li>Strengths: Python, scikit-learn, EDA, documentation</li>
+        <li>Currently: refining ML pipelines and portfolio projects</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div class="grid grid-2">
+        <!-- CMS Payments -->
+        <article class="card reveal">
+          <div class="card-header">
+            <h3>Predicting High-Value Physician Payments</h3>
+            <a class="btn" href="https://github.com/ananyausf/Predicting-High-Value-Physician-Payments" target="_blank" rel="noopener">Repo</a>
+          </div>
+          <p>
+            ML on CMS Open Payments 2023 to identify high-value physician payments. Compared multiple models;
+            optimized for <strong>recall</strong> to minimize false negatives for compliance monitoring.
+          </p>
+          <!-- Optional thumbnail (upload to assets/ and update src) -->
+          <!-- <img class="thumb" src="assets/cms_roc_curve.png" alt="ROC curve thumbnail"> -->
+          <ul class="tags">
+            <li>Python</li><li>scikit-learn</li><li>Random Forest</li><li>PR/ROC</li>
+          </ul>
+        </article>
+
+        <!-- Fashion MNIST -->
+        <article class="card reveal">
+          <div class="card-header">
+            <h3>Fashion MNIST Image Classification</h3>
+            <a class="btn" href="https://github.com/ananyausf/Fashion-MNIST-Image-Classification" target="_blank" rel="noopener">Repo</a>
+          </div>
+          <p>
+            Compared Logistic Regression, KNN, MLP, Random Forest, and SVM on Fashion MNIST. Improved
+            <strong>recall</strong> via tuning to reduce false negatives across clothing classes.
+          </p>
+          <!-- <img class="thumb" src="assets/fashion_confusion_matrix.png" alt="Fashion MNIST confusion matrix"> -->
+          <ul class="tags">
+            <li>Python</li><li>scikit-learn</li><li>MLPClassifier</li><li>Model Tuning</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h4>Languages</h4>
+          <p>Python, JavaScript, SQL, C#</p>
+        </div>
+        <div class="skill">
+          <h4>Frameworks & Tools</h4>
+          <p>scikit-learn, pandas, matplotlib, Git/GitHub</p>
+        </div>
+        <div class="skill">
+          <h4>Data & Analytics</h4>
+          <p>EDA, feature engineering, CV tuning, evaluation (ROC/PR)</p>
+        </div>
+        <div class="skill">
+          <h4>Visualization</h4>
+          <p>Tableau, matplotlib</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <p>Reach out for collaboration or questions.</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:ananyagullapally@usf.edu">ananyagullapally@usf.edu</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener">Add your LinkedIn</a></li>
+        <li>GitHub: <a href="https://github.com/ananyausf" target="_blank" rel="noopener">github.com/ananyausf</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Ananya Gullapally · Built with HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Light/Dark theme toggle (persists)
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') root.classList.add('light');
+    btn.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // Simple reveal animation when page loads
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.style.animationDelay = (Array.from(el.parentNode.children).indexOf(el) * 120) + 'ms';
+      });
+    });
+  </script>
+</body>
+</html>
